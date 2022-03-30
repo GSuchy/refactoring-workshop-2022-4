@@ -1,4 +1,6 @@
 #include "SnakeController.hpp"
+#include "SnakeBody.hpp"
+#include "SnakeBody.cpp"
 
 #include <algorithm>
 #include <sstream>

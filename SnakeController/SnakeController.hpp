@@ -42,7 +42,8 @@ private:
     std::pair<int, int> m_mapDimension;
     std::pair<int, int> m_foodPosition;
 
-    std::list<Segment> m_segments;
+    SnakeBody OurBraveSnake;
+    
     Direction m_currentDirection;
 
     void handleTimeoutInd();

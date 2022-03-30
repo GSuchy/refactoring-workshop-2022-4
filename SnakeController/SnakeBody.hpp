@@ -22,19 +22,21 @@ class SnakeBody
  
  public:
     
+    std::list<Segment> m_segments;
     
-    
+
+ protected:
+
+    //std::list<Segment> m_segments;
 
  private:
-
-    std::list<Segment> m_segments;
-
-    //bool isSegmentAtPosition(int x, int y) const;
-    //Segment calculateNewHead() const;
-    //void updateSegmentsIfSuccessfullMove(Segment const& newHead);
-    //void addHeadSegment(Segment const& newHead);
-    //void removeTailSegmentIfNotScored(Segment const& newHead);
-    //void removeTailSegment();
+    /*bool isSegmentAtPosition(int x, int y) const;
+    Segment calculateNewHead() const;
+    void removeTailSegment();
+    void addHeadSegment(Segment const& newHead);
+    void updateSegmentsIfSuccessfullMove(Segment const& newHead);
+    void removeTailSegmentIfNotScored(Segment const& newHead);*/
+    
 };
 
 } //namespace

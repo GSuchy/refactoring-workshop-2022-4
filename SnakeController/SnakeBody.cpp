@@ -1,7 +1,8 @@
-#include <list>
-#include <memory>
-#include <stdexcept>
-#include <functional>
+#include <algorithm>
+#include <sstream>
+
+#include "EventT.hpp"
+#include "IPort.hpp"
 
 #include "SnakeBody.hpp"
 #include "IEventHandler.hpp"
@@ -10,13 +11,13 @@
 namespace Snake
 {
 
-/*bool SnakeBody::isSegmentAtPosition(int x, int y) const
+bool SnakeBody::isSegmentAtPosition(int x, int y) const
 {
     return m_segments.end() !=  std::find_if(m_segments.cbegin(), m_segments.cend(),
         [x, y](auto const& segment){ return segment.x == x and segment.y == y; });
 }
 
-Segment SnakeBody::calculateNewHead() const
+/*Segment SnakeBody::calculateNewHead() const
 {
     Segment const& currentHead = m_segments.front();
 

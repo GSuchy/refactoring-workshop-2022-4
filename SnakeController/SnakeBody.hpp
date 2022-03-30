@@ -23,7 +23,10 @@ class SnakeBody
  public:
     
     std::list<Segment> m_segments;
+    Direction m_currentDirection;
+
     bool isSegmentAtPosition(int x, int y) const;
+    Segment calculateNewHead() const;
 
  protected:
 
@@ -31,8 +34,8 @@ class SnakeBody
 
  private:
     //bool isSegmentAtPosition(int x, int y) const;
-    /*Segment calculateNewHead() const;
-    void removeTailSegment();
+    //Segment calculateNewHead() const;
+    /*void removeTailSegment();
     void addHeadSegment(Segment const& newHead);
     void updateSegmentsIfSuccessfullMove(Segment const& newHead);
     void removeTailSegmentIfNotScored(Segment const& newHead);*/

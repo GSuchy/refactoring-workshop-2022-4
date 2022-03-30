@@ -17,7 +17,7 @@ bool SnakeBody::isSegmentAtPosition(int x, int y) const
         [x, y](auto const& segment){ return segment.x == x and segment.y == y; });
 }
 
-/*Segment SnakeBody::calculateNewHead() const
+Segment SnakeBody::calculateNewHead() const
 {
     Segment const& currentHead = m_segments.front();
 
@@ -28,7 +28,7 @@ bool SnakeBody::isSegmentAtPosition(int x, int y) const
     return newHead;
 }
 
-void SnakeBody::removeTailSegment()
+/*void SnakeBody::removeTailSegment()
 {
     auto tail = m_segments.back();
 

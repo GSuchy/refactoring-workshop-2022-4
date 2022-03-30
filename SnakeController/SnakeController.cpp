@@ -38,16 +38,16 @@ Controller::Controller(IPort& p_displayPort, IPort& p_foodPort, IPort& p_scorePo
         istr >> d;
         switch (d) {
             case 'U':
-                m_currentDirection = Direction_UP;
+                OurBraveSnake.m_currentDirection = Direction_UP;
                 break;
             case 'D':
-                m_currentDirection = Direction_DOWN;
+                OurBraveSnake.m_currentDirection = Direction_DOWN;
                 break;
             case 'L':
-                m_currentDirection = Direction_LEFT;
+                OurBraveSnake.m_currentDirection = Direction_LEFT;
                 break;
             case 'R':
-                m_currentDirection = Direction_RIGHT;
+                OurBraveSnake.m_currentDirection = Direction_RIGHT;
                 break;
             default:
                 throw ConfigurationError();
@@ -115,7 +115,7 @@ bool perpendicular(Direction dir1, Direction dir2)
 }
 } // namespace
 
-Segment Controller::calculateNewHead() const
+/*Segment Controller::calculateNewHead() const
 {
     Segment const& currentHead = OurBraveSnake.m_segments.front();
 
@@ -124,7 +124,7 @@ Segment Controller::calculateNewHead() const
     newHead.y = currentHead.y + (isVertical(m_currentDirection) ? isPositive(m_currentDirection) ? 1 : -1 : 0);
 
     return newHead;
-}
+}*/
 
 void Controller::removeTailSegment()
 {
@@ -173,15 +173,15 @@ void Controller::updateSegmentsIfSuccessfullMove(Segment const& newHead)
 
 void Controller::handleTimeoutInd()
 {
-    updateSegmentsIfSuccessfullMove(calculateNewHead());
+    updateSegmentsIfSuccessfullMove(OurBraveSnake.calculateNewHead());
 }
 
 void Controller::handleDirectionInd(std::unique_ptr<Event> e)
 {
     auto direction = payload<DirectionInd>(*e).direction;
 
-    if (perpendicular(m_currentDirection, direction)) {
-        m_currentDirection = direction;
+    if (perpendicular(OurBraveSnake.m_currentDirection, direction)) {
+        OurBraveSnake.m_currentDirection = direction;
     }
 }
 

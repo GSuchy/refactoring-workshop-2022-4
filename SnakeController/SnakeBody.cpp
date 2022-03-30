@@ -10,12 +10,10 @@
 namespace Snake
 {
 
-struct Segment
-    {
-        int x;
-        int y;
-    };
+/*void SnakeBody::removeTailSegment()
+{
 
+}*/
 
 
 
